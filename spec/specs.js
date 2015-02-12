@@ -31,4 +31,8 @@ describe("wordCounter", function(){
     expect(wordCounter("Dog, cat, doG.")).to.eql(["dog", "cat"]);
   });
 
+  it("can handle numbers in the text", function(){
+    expect(wordCounter("3 dog, night!Played at, dog")).to.eql(["dog","3","at","night", "played"]);
+  });
+
 });

@@ -7,7 +7,6 @@ var wordCounter = function(string){
         words.push(wordsWithPunctuation[i]);
       }
   }
-
   var
   resultsHash = {1:[]},
   results = [],
@@ -33,8 +32,6 @@ var wordCounter = function(string){
     temp = resultsHash[property].sort();
     results = temp.concat(results);
   });
-
-
 
   return results;
 };
