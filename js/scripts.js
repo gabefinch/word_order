@@ -35,3 +35,16 @@ var wordCounter = function(string){
 
   return results;
 };
+
+$(function(){
+  $('form#text-form').submit(function(event) {
+    var text = $('textarea#text').val();
+    words = wordCounter(text);
+    words.forEach(function(word) {
+      $('#word-list').append("<li>" + word + "</li>");
+    });
+    $('#results').show();
+    event.preventDefault();
+  });
+
+});
