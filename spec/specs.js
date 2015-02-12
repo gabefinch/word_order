@@ -18,4 +18,17 @@ describe("wordCounter", function(){
   it("can handle tripled words", function(){
     expect(wordCounter("dog dog dog cat cat mouse")).to.eql(["dog", "cat", "mouse"]);
   });
+
+  it("can handle a mix of frequencies that are not consequtive e.g. one word once one word thrice", function(){
+      expect(wordCounter("dog cat cat cat")).to.eql(["cat","dog"]);
+  });
+
+  it("can handle a mix of letter cases", function(){
+    expect(wordCounter("Dog dOg cAt CAT doG MoUse")).to.eql(["dog", "cat", "mouse"]);
+  });
+
+  it("can handle puctuation in there", function(){
+    expect(wordCounter("Dog, cat, doG.")).to.eql(["dog", "cat"]);
+  });
+
 });

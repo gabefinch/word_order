@@ -1,6 +1,14 @@
 var wordCounter = function(string){
+  var wordsWithPunctuation = string.toLowerCase().split(/\W/);
+  var words = [];
+
+  for(var i = 0; i < wordsWithPunctuation.length; i++){
+      if(wordsWithPunctuation[i] !== ""){
+        words.push(wordsWithPunctuation[i]);
+      }
+  }
+
   var
-  words = string.split(" "),
   resultsHash = {1:[]},
   results = [],
   poppedWord = "",
